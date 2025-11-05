@@ -4,6 +4,7 @@ int latchPin=9;
 int clockPin=8;
 int dataPin=10;
 
+Servo myservo;
 int pin_mode=1;      
 int pin_key[5]={2,3,4,5,6}; 
 int pin_confirm=11;       
