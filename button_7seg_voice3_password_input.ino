@@ -28,7 +28,7 @@ bool setting_mode=false;
 
 int last_mode_state=HIGH;  
 unsigned long last_press_time=0;
-unsigned long debounce_delay=50;
+unsigned long debounce_delay=200;
 
 int input_code[4];     
 int input_index=0; 
@@ -132,7 +132,7 @@ void loop(){
         display(premode,i); 
         beep(1000, 100);
       }
-      delay(200); 
+      delay(debounce_delay); 
     }
   }
 
@@ -159,12 +159,12 @@ void loop(){
       }
     }
     resetInput();
-    delay(300);
+    delay(debounce_delay);
   }
 
   if (digitalRead(pin_reset)==LOW) {
     resetInput();
     beep(800,100);
-    delay(200);
+    delay(debounce_delay);
   }
 }
